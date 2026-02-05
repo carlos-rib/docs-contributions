@@ -1,0 +1,559 @@
+@import url('https://rsms.me/inter/inter.css');
+
+/* ------------------------------------------------------------ */
+
+/**
+ * Any CSS included here will be global. The classic template
+ * bundles Infima by default. Infima is a CSS framework designed to
+ * work well for content-centric websites.
+ */
+
+/* You can override the default Infima variables here. */
+:root {
+  --ifm-font-family-base: 'Inter var', 'Inter', -apple-system,
+    BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+  --ifm-font-family-monospace: ui-monospace, SFMono-Regular, Menlo, Monaco,
+    Consolas, 'Liberation Mono', 'Courier New', monospace;
+  --ifm-heading-font-family: 'Inter var', 'Inter', -apple-system,
+    BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+  --ifm-font-weight-bold: 700;
+  --ifm-heading-font-weight: 600;
+  --ifm-line-height-base: 1.65;
+  --ifm-global-spacing: 1.25rem;
+  --ifm-spacing-horizontal: 1.25rem;
+  --ifm-button-border-radius: 999px;
+  --ifm-button-padding-vertical: 0.65rem;
+  --ifm-button-padding-horizontal: 1.5rem;
+  --ifm-code-border-radius: 0.75rem;
+  --ifm-card-border-radius: 1rem;
+  --ifm-color-primary: #007bbd;
+  --ifm-color-primary-dark: #00679e;
+  --ifm-color-primary-darker: #005485;
+  --ifm-color-primary-darkest: #004570;
+  --ifm-color-primary-light: #0088cc;
+  --ifm-color-primary-lighter: #6bc4ff;
+  --ifm-color-primary-lightest: #c7eeff;
+  --ifm-link-color: #6bc4ff;
+  --ifm-color-secondary: #1c1d1f;
+  --ifm-color-secondary-dark: #101012;
+  --ifm-color-secondary-darker: #08090a;
+  --ifm-color-secondary-darkest: #05141f;
+  --ifm-color-secondary-light: #282a2e;
+  --ifm-color-secondary-lighter: #46474e;
+  --ifm-blockquote-color: #babbc4;
+  --ifm-table-border-color: #1c1d1f;
+  --ifm-breadcrumb-color-active: #6bc4ff;
+  --ifm-navbar-link-hover-color: #6bc4ff;
+  --ifm-toc-border-color: #1c1d1f;
+  --ifm-menu-color: #babbc4;
+  --ifm-menu-color-active: #6bc4ff;
+  --ifm-menu-color-background-active: rgba(0, 123, 189, 0.12);
+  --ifm-breadcrumb-item-background-active: rgba(0, 123, 189, 0.18);
+  --ifm-code-font-size: 95%;
+  --ifm-background-color: #05141f;
+  --ifm-background-surface-color: #091c2a;
+  --ifm-background-alt: #08090a;
+  --ifm-navbar-background-color: rgba(5, 20, 31, 0.85);
+  --ifm-navbar-link-color: #f7f8f8;
+  --ifm-navbar-height: 64px;
+  --ifm-footer-background-color: #091c2a;
+  --ifm-card-background-color: #101b2b;
+  --ifm-code-background: #0f1e2d;
+  --ifm-pre-background: #0f1e2d;
+  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
+  --ifm-footer-padding-vertical: 1rem;
+
+  --theme-color-primary100: hsl(240 33% 99%);
+  --theme-color-primary200: hsl(225 100% 98%);
+
+  /* Interactive components (active list items; banners; pill buttons; etc)*/
+  --theme-color-primary300: hsl(222 89% 96%);
+  --theme-color-primary400: hsl(219 100% 94%);
+  --theme-color-primary500: hsl(221 100% 91%);
+
+  /* Borders & separators */
+  --theme-color-primary600: hsl(222 100% 87%);
+  --theme-color-primary700: hsl(222 87% 81%);
+  --theme-color-primary800: hsl(223 76% 73%);
+
+  /* Solid colors (avatar bgs; buttons; etc) */
+  --theme-color-primary900: hsl(226 70% 55%);
+  --theme-color-primary1000: hsl(226 57% 49%);
+
+  /* Text colors (main color) */
+  --theme-color-primary1100: hsl(226 56% 50%);
+  --theme-color-primary1200: hsl(224 52% 24%);
+
+  /* White background */
+  --theme-color-secondaryMain: hsl(240 20% 99%);
+
+  /* White text */
+  --theme-color-secondaryForegroundText: hsl(225 8.3% 90.6%);
+
+  /* Background colors */
+  --theme-color-secondary100: hsl(240 20% 99%);
+  --theme-color-secondary200: hsl(240 20% 98%);
+
+  /* Interactive components (active list items; banners; pill buttons; etc) */
+  --theme-color-secondary300: hsl(225 14% 95%);
+  --theme-color-secondary400: hsl(228 12% 92%);
+  --theme-color-secondary500: hsl(230 11% 89%);
+
+  /* Borders & separators */
+  --theme-color-secondary600: hsl(233 11% 86%);
+  --theme-color-secondary650: hsl(233 11% 93%);
+  --theme-color-secondary700: hsl(234 11% 82%);
+  --theme-color-secondary800: hsl(231 10% 75%);
+
+  /* Solid colors (avatar bgs; buttons; etc) */
+  --theme-color-secondary900: hsl(231 6% 57%);
+  --theme-color-secondary1000: hsl(231 5% 53%);
+
+  /* Text colors (gray and white color) */
+  --theme-color-secondary1100: hsl(234 5% 40%);
+  --theme-color-secondary1125: hsl(225 8.3% 10%);
+  --theme-color-secondary1150: hsl(234 8.3% 30%);
+  --theme-color-secondary1200: hsl(230 9% 13%);
+
+  --theme-color-iconMain: hsl(235 8% 30%);
+
+  /* Status colors */
+  --theme-color-error100: hsl(2 58% 23%);
+  --theme-color-error200: hsl(357 50% 38%);
+  --theme-color-error300: hsl(2, 76%, 47%);
+
+  --theme-color-success: hsl(133.7 62% 40.2%);
+
+  --theme-color-warning100: hsl(47.8 100% 47.1%);
+  --theme-color-warning200: hsl(48 96% 33%);
+
+  /* Shadows and effects */
+  --theme-shadow-selectedTabBottom: inset 0 -2px 0 #f78166;
+  --theme-shadow-hoveredTabBottom: inset 0 -1px 0 hsl(231 6% 45%);
+  --theme-popoverBackground: hsl(0 0% 0%);
+  --theme-popoverBorder: hsl(0 0% 0%);
+  --theme-notificationBackground: hsl(88.12% 0.01 296.81);
+  --theme-notificationBorder: hsl(57.48% 0.01 296.81);
+
+  /* Design tokens */
+  --border-radius-lg: 0.5rem;
+  --border-radius-md: calc(0.5rem - 2px);
+  --border-radius-sm: calc(0.5rem - 4px);
+  --border-width-1: 1px;
+  --font-geist: Geist, sans-serif;
+  --font-size-micro: 0.625rem;
+  --text-sm: 0.8125rem;
+
+  /* Shadow definitions */
+  --shadow-subContainers: hsl(0 0 0 / 0.06) 0px 4px 4px -1px,
+    hsl(0 0 0 / 0.12) 0px 1px 1px 0px;
+  --shadow-dialogShadow: hsl(0 0 0 / 0.15) 0px 4px 40px,
+    hsl(0 0 0 / 0.188) 0px 3px 20px, hsl(0 0 0 / 0.188) 0px 3px 12px,
+    hsl(0 0 0 / 0.188) 0px 2px 8px, hsl(0 0 0 / 0.188) 0px 1px 1px;
+  --shadow-popover: hsl(0 0 0 / 0.188) 0px 3px 8px,
+    hsl(0 0 0 / 0.188) 0px 2px 5px, hsl(0 0 0 / 0.188) 0px 1px 1px;
+  --shadow-popover-lg: hsl(0 0 0 / 0.15) 0px 4px 40px,
+    hsl(0 0 0 / 0.188) 0px 3px 20px, hsl(0 0 0 / 0.188) 0px 3px 12px,
+    hsl(0 0 0 / 0.188) 0px 2px 8px, hsl(0 0 0 / 0.188) 0px 1px 1px;
+  --shadow-tooltip: hsl(0 0 0 / 0.06) 0px 4px 4px -1px,
+    hsl(0 0 0 / 0.12) 0px 1px 1px 0px;
+
+  /* Shorthand color variables for easier usage */
+  --color-primary100: var(--theme-color-primary100);
+  --color-primary200: var(--theme-color-primary200);
+  --color-primary300: var(--theme-color-primary300);
+  --color-primary400: var(--theme-color-primary400);
+  --color-primary500: var(--theme-color-primary500);
+  --color-primary600: var(--theme-color-primary600);
+  --color-primary700: var(--theme-color-primary700);
+  --color-primary800: var(--theme-color-primary800);
+  --color-primary900: var(--theme-color-primary900);
+  --color-primary1000: var(--theme-color-primary1000);
+  --color-primary1100: var(--theme-color-primary1100);
+  --color-primary1200: var(--theme-color-primary1200);
+
+  --color-secondaryMain: var(--theme-color-secondaryMain);
+  --color-secondaryForegroundText: var(--theme-color-secondaryForegroundText);
+  --color-secondary100: var(--theme-color-secondary100);
+  --color-secondary200: var(--theme-color-secondary200);
+  --color-secondary300: var(--theme-color-secondary300);
+  --color-secondary400: var(--theme-color-secondary400);
+  --color-secondary500: var(--theme-color-secondary500);
+  --color-secondary600: var(--theme-color-secondary600);
+  --color-secondary650: var(--theme-color-secondary650);
+  --color-secondary700: var(--theme-color-secondary700);
+  --color-secondary800: var(--theme-color-secondary800);
+  --color-secondary900: var(--theme-color-secondary900);
+  --color-secondary1000: var(--theme-color-secondary1000);
+  --color-secondary1100: var(--theme-color-secondary1100);
+  --color-secondary1125: var(--theme-color-secondary1125);
+  --color-secondary1150: var(--theme-color-secondary1150);
+  --color-secondary1200: var(--theme-color-secondary1200);
+
+  --color-iconMain: var(--theme-color-iconMain);
+
+  --color-error100: var(--theme-color-error100);
+  --color-error200: var(--theme-color-error200);
+  --color-error300: var(--theme-color-error300);
+  --color-success: var(--theme-color-success);
+  --color-warning100: var(--theme-color-warning100);
+  --color-warning200: var(--theme-color-warning200);
+
+  --shadow-selectedTabBottom: var(--theme-shadow-selectedTabBottom);
+  --shadow-hoveredTabBottom: var(--theme-shadow-hoveredTabBottom);
+  --color-popoverBackground: var(--theme-popoverBackground);
+  --color-popoverBorder: var(--theme-popoverBorder);
+  --color-notificationBackground: var(--theme-notificationBackground);
+  --color-notificationBorder: var(--theme-notificationBorder);
+}
+
+[data-theme='dark'] {
+  --ifm-navbar-search-input-icon: url('data:image/svg+xml;utf8,<svg fill="%23525252" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" height="16px" width="16px"><path d="M6.02945,10.20327a4.17382,4.17382,0,1,1,4.17382-4.17382A4.15609,4.15609,0,0,1,6.02945,10.20327Zm9.69195,4.2199L10.8989,9.59979A5.88021,5.88021,0,0,0,12.058,6.02856,6.00467,6.00467,0,1,0,9.59979,10.8989l4.82338,4.82338a.89729.89729,0,0,0,1.29912,0,.89749.89749,0,0,0-.00087-1.29909Z" /></svg>');
+
+  --ifm-color-primary: #41aee8;
+  --ifm-color-primary-dark: #00679e;
+  --ifm-color-primary-darker: #005485;
+  --ifm-color-primary-darkest: #004570;
+  --ifm-color-primary-light: #00a6e6;
+  --ifm-color-primary-lighter: #6bc4ff;
+  --ifm-color-primary-lightest: #c7eeff;
+  --ifm-link-color: #6bc4ff;
+  --ifm-font-color-base: #e5e6e9;
+  --ifm-font-color-secondary: #babbc4;
+  --ifm-heading-color: #e5e6e9;
+  --ifm-background-color: #05141f;
+  --ifm-background-surface-color: #091c2a;
+  --ifm-background-alt: #08090a;
+  --ifm-toc-link-color: #a0a6af;
+
+  --ifm-navbar-link-color: #a8afb9;
+  --ifm-footer-background-color: #091c2a;
+  --ifm-card-background-color: #101b2b;
+  --ifm-code-background: #0f1e2d;
+  --ifm-pre-background: #0f1e2d;
+  --docusaurus-highlighted-code-line-bg: rgba(0, 123, 189, 0.25);
+
+  --ifm-background-color: #000000 !important;
+
+  --ifm-heading-font-weight: 600;
+  /*=====CUSTOMTHEMEVARIABLES-DARKMODE=====*/ /*Backgroundcolors*/
+  --theme-color-primary100: hsl(205 71% 7%);
+  --theme-color-primary200: hsl(205 63% 10%);
+
+  /* Interactive components (active list items; banners; pill buttons; etc)*/
+  --theme-color-primary300: hsl(204 100% 13%);
+  --theme-color-primary400: hsl(204 100% 18%);
+  --theme-color-primary500: hsl(203 100% 22%);
+
+  /* Borders & separators */
+  --theme-color-primary600: hsl(202 100% 26%);
+  --theme-color-primary700: hsl(201 100% 31%);
+  --theme-color-primary800: hsl(201 100% 37%);
+
+  /* Solid colors (avatar bgs; buttons; etc) */
+  --theme-color-primary900: hsl(200 100% 40%);
+  --theme-color-primary1000: hsl(201 100% 37%);
+
+  /* Text colors (main color) */
+  --theme-color-primary1100: hsl(204 100% 71%);
+  --theme-color-primary1200: hsl(198 100% 89%);
+
+  --theme-color-secondaryMain: hsl(240 10% 0%);
+  --theme-color-secondaryForegroundText: hsl(225 8.3% 90.6%);
+
+  --theme-color-secondary100: hsl(205 8% 8%);
+  --theme-color-secondary200: hsl(240 5.9% 6.7%);
+
+  /* Interactive components (active list items; banners; pill buttons; etc) */
+  --theme-color-secondary300: hsl(220 5.1% 11.6%);
+  --theme-color-secondary400: hsl(228 7% 17%);
+  --theme-color-secondary500: hsl(228 7.7% 15.7%);
+
+  /* Borders & separators */
+  --theme-color-secondary600: hsl(222.9 8.4% 16.3%);
+  --theme-color-secondary650: hsl(21.967 4.783 272);
+  --theme-color-secondary700: hsl(227 6% 29%);
+  --theme-color-secondary800: hsl(235 5% 39%);
+
+  /* Solid colors (avatar bgs; buttons; etc) */
+  --theme-color-secondary900: hsl(231 6% 45%);
+  --theme-color-secondary1000: hsl(231 5% 50%);
+
+  /* Text colors (gray and white color) */
+  --theme-color-secondary1100: hsl(235 8% 75%);
+  --theme-color-secondary1125: hsl(225 8.3% 90.6%);
+  --theme-color-secondary1150: hsl(225 8.3% 90.6%);
+  --theme-color-secondary1200: hsl(240 6% 94%);
+
+  --theme-color-iconMain: hsl(235 8% 72%);
+
+  /* Status colors */
+  --theme-color-error100: hsl(2 58% 23%);
+  --theme-color-error200: hsl(357, 60%, 40%);
+  --theme-color-error300: hsl(2, 76%, 47%);
+  --theme-color-error400: hsl(57.833% 73 29);
+  --theme-color-error500: hsl(63.833 73 29);
+
+  --theme-color-success100: hsl(134, 95%, 16%);
+  --theme-color-success200: hsl(133.7 62% 40.2%);
+
+  --theme-color-warning100: hsl(48, 89%, 19%);
+  --theme-color-warning200: hsl(47.8 100% 47.1%);
+
+  /* Shadows and effects */
+  --theme-shadow-selectedTabBottom: inset 0 -2px 0 hsl(201 100% 37%);
+  --theme-shadow-hoveredTabBottom: inset 0 -2px 0 hsl(231 6% 45%);
+  --theme-popoverBackground: hsl(12.633 1.867 272);
+  --theme-popoverBorder: hsl(26.833 4.707 272);
+  --theme-notificationBackground: hsl(10.633 1.867 272);
+  --theme-notificationBorder: hsl(24.833 4.707 272);
+}
+
+.button-primary {
+  display: inline-flex;
+  overflow: hidden;
+  position: relative;
+  align-items: center;
+  justify-content: center;
+
+  height: 2.25rem;
+  width: 100%;
+  padding: 0.5rem 1rem;
+
+  cursor: default;
+  border-radius: 0.375rem;
+  border: 0.5px solid rgba(142, 208, 252, 0.4);
+  background: linear-gradient(to right, #0c7ebc, #00679e);
+  box-shadow: 0 1px 2px 0 rgba(9, 28, 42, 0.2);
+
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: #c7eeff;
+  white-space: nowrap;
+
+  transition-property: color, background-color, border-color,
+    text-decoration-color, fill, stroke;
+  transition-duration: 150ms;
+  transition-timing-function: ease-in-out;
+
+  outline: 1px solid transparent;
+}
+
+.button-primary:focus {
+  outline: 1px solid #0088cc;
+  outline-offset: 1.5px;
+}
+
+.button-primary:hover {
+  background: linear-gradient(to right, #0a89cd, #0170ac);
+  border-color: #8abbdb;
+  color: #c7eeff;
+}
+
+@media (min-width: 768px) {
+  .button-primary {
+    width: 12.25rem;
+    height: 2.5rem;
+  }
+
+  .breadcrumbs {
+    --ifm-breadcrumb-item-background-active: var(--theme-color-secondary500);
+  }
+
+  .menu__link {
+    font-size: 15px;
+  }
+
+  .menu__link:hover {
+    background-color: var(--theme-color-secondary500);
+  }
+
+  .menu__link--active {
+    color: var(--theme-color-primary1100);
+
+    --ifm-menu-color-background-active: color-mix(
+      in srgb,
+      var(--theme-color-primary400) 80%,
+      transparent
+    );
+  }
+}
+
+[data-theme='dark'] .footer {
+  --ifm-footer-background-color: #000000;
+  border-top: 0.5px solid var(--theme-color-secondary600);
+  .footer__copyright {
+    font-size: 12px;
+    color: var(--theme-color-secondary800);
+  }
+}
+
+[data-theme='dark'] .navbar {
+  --ifm-navbar-background-color: var(--theme-color-secondaryMain);
+  border-bottom: 0.5px solid var(--theme-color-secondary600);
+
+  min-height: 64px;
+
+  .navbar__title {
+    margin-left: 7px;
+    margin-right: 7px;
+    font-size: 1rem;
+    line-height: 1.6;
+    letter-spacing: -0.052em;
+    font-weight: 510;
+    color: #ffffff;
+  }
+
+  .navbar__logo {
+    height: 20px;
+  }
+
+  .navbar__item {
+    font-size: 0.8rem;
+    letter-spacing: -0.013em;
+    line-height: calc(21 / 14);
+  }
+}
+
+[data-theme='dark'] .navbar__search {
+  .navbar__search-input {
+    display: flex;
+    column-gap: 0.5rem;
+
+    font-size: 0.75rem;
+    line-height: 1rem;
+
+    outline: none;
+
+    width: 12rem;
+    border-radius: 0.375rem;
+    padding-top: 0.3125rem;
+    padding-bottom: 0.3125rem;
+    padding-left: 2.4rem;
+    padding-right: 0.375rem;
+
+    background-color: #171717;
+    box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.1),
+      0 -1px 0 rgba(255, 255, 255, 0.132), 0 4px 8px rgba(97, 196, 246, 0.091),
+      0 1px 6px -4px #028edf15;
+  }
+
+  .navbar__search-input:focus-visible,
+  .navbar__search-input[data-focus-visible] {
+    outline: 2px solid rgba(96, 165, 250, 0.946);
+    outline-offset: 2px;
+  }
+}
+
+html[data-theme='dark'] #search_input_react::placeholder {
+  color: #8a8f98 !important;
+}
+
+.custom-rays {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+[data-theme='dark'] .container {
+  gap: 12px;
+
+  .hero__title {
+    font-size: 2.5rem;
+    margin-bottom: 0;
+    margin-top: 40px !important;
+  }
+
+  .hero__subtitle {
+    font-size: 0.9375rem;
+    line-height: 1.6;
+    letter-spacing: -0.011em;
+    color: #a1a7b2;
+  }
+  .hero__subtitle2 {
+    font-size: 0.8375rem;
+    margin-top: -18px;
+    letter-spacing: -0.011em;
+    color: #8a8f98;
+  }
+}
+
+.changelog-sidebarSticky {
+  position: sticky !important;
+  top: calc(var(--ifm-navbar-height) + 16px);
+  align-self: start;
+  max-height: calc(100vh - var(--ifm-navbar-height) - 32px);
+  overflow: auto;
+  z-index: 1;
+  background: inherit;
+}
+
+.pagination-nav {
+  display: none !important;
+}
+
+.theme-doc-sidebar-container {
+  border-right: 0.5px solid var(--theme-color-secondary600) !important;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--ifm-background-color);
+
+  color: var(--ifm-font-color-base);
+}
+
+main {
+  background-color: transparent;
+}
+
+a {
+  transition: color 150ms ease, opacity 150ms ease;
+}
+
+a:hover {
+  color: #84cff5;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  letter-spacing: -0.015em;
+}
+
+.markdown > p,
+.markdown > ul,
+.markdown > ol {
+  color: var(--ifm-font-color-base);
+}
+
+.markdown blockquote {
+  border-left-color: rgba(107, 196, 255, 0.35);
+  color: var(--ifm-blockquote-color);
+  background: rgba(16, 27, 43, 0.5);
+  border-radius: 0 1rem 1rem 0;
+}
+
+code,
+pre {
+  border-radius: var(--ifm-code-border-radius);
+}
+
+code {
+  background-color: rgba(0, 123, 189, 0.12);
+  color: #6bc4ff;
+  padding-inline: 0.4em;
+  padding-block: 0.2em;
+}
+
+pre {
+  border: 1px solid rgba(107, 196, 255, 0.15);
+}

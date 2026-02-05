@@ -1,0 +1,17 @@
+.figure {
+  width: 100%;
+  margin: 1.25rem 0;
+}
+
+.chart {
+  width: 100%;
+  min-height: 320px;
+  aspect-ratio: 4 / 3;
+  height: auto;
+}
+
+.error {
+  margin-top: 0.5rem;
+  color: #f48b8b;
+  font-size: 0.95rem;
+}

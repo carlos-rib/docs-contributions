@@ -1,0 +1,8 @@
+.company-logo-fill {
+  fill: var(--theme-color-primary1000); /* Blue color for light theme */
+}
+
+/* Dark theme styles - Green fill */
+[data-theme='dark'] .company-logo-fill {
+  fill: var(--theme-color-secondary1200); /* Green color for dark theme */
+}

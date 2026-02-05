@@ -1,0 +1,158 @@
+.heroBanner {
+  padding: 4rem 0;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  height: 50vh;
+  background: linear-gradient(to bottom, #01375846, transparent);
+  z-index: 1;
+}
+
+.heroBannerContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+}
+
+@media screen and (max-width: 996px) {
+  .heroBanner {
+    padding: 2rem;
+  }
+}
+
+.buttons {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.mainContainer {
+  width: 100% !important;
+}
+
+.linkCards {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  position: relative;
+  z-index: 1;
+}
+
+@media screen and (max-width: 996px) {
+  .linkCards {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+.docs-main {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 72rem;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+  padding-top: 6rem;
+  padding-bottom: 6rem;
+}
+
+.docs-hero {
+  text-align: center;
+}
+
+.docs-logo-wrapper {
+  margin-bottom: 1rem;
+  display: flex;
+  justify-content: center;
+}
+
+.docs-title {
+  font-size: 2.25rem;
+  line-height: 2.5rem;
+  font-weight: 600;
+  letter-spacing: -0.03em;
+}
+
+.docs-subtitle {
+  margin-top: 0.5rem;
+  font-size: 0.875rem;
+  color: #a1a1aa;
+}
+
+.docs-card-grid {
+  margin-top: 2.5rem;
+  display: grid;
+  gap: 1.5rem;
+}
+
+@media (min-width: 768px) {
+  .docs-card-grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+}
+
+.acknowledgments {
+  margin-top: 4rem;
+  padding-top: 2.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 4rem;
+}
+
+.acknowledgementsTitle {
+  font-size: 1rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  color: #dbdbdc;
+}
+
+.acknowledgementsIntro {
+  margin-top: 0.5rem;
+  max-width: 32rem;
+  font-size: 0.875rem;
+  color: #a1a1aa;
+}
+
+.acknowledgementsGrid {
+  margin-top: 1.5rem;
+  display: grid;
+  gap: 0.75rem;
+  font-size: 0.875rem;
+  color: #d4d4d8;
+}
+
+@media (min-width: 768px) {
+  .acknowledgementsGrid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 1024px) {
+  .acknowledgementsGrid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+.acknowledgementsCard {
+  border-radius: 0.75rem;
+  background-color: rgba(255, 255, 255, 0.05);
+  padding: 0.75rem 1rem;
+  backdrop-filter: blur(12px);
+}
+
+.acknowledgementsName {
+  margin: 0;
+  font-weight: 500;
+  color: #f4f4f5;
+}
+
+.acknowledgementsRole {
+  margin: 0.25rem 0 0;
+  font-size: 0.75rem;
+  color: #a1a1aa;
+}

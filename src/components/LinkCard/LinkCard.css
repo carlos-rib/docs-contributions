@@ -1,0 +1,63 @@
+.link-card {
+  display: flex;
+  min-height: 280px;
+  width: 240px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  border-radius: 8px;
+  background-color: hsla(0, 0%, 100%, 0.08);
+  border: 1px solid hsla(0, 0%, 100%, 0.08);
+  overflow: hidden;
+  transition-property: border-color, background-color;
+  transition-duration: 250ms;
+  user-select: none;
+  text-decoration: none;
+  box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
+}
+
+.link-card:hover {
+  background-color: #232326;
+  border-color: #34343a;
+}
+
+.link-card-icon {
+  padding: 24px 20px;
+  color: white;
+  width: 100%;
+}
+
+.link-card-content {
+  margin-top: auto;
+  padding: 20px;
+  transition: inherit;
+  border-top: 1px solid hsla(0, 0%, 100%, 0.05);
+  width: 100%;
+}
+
+.link-card-title {
+  font-size: 15px;
+  font-weight: 500;
+  line-height: 24px;
+  letter-spacing: -0.015em;
+  color: white;
+  text-decoration: none;
+}
+
+.link-card-subtitle {
+  font-size: 13px;
+  line-height: 20px;
+  color: hsla(0, 0%, 100%, 0.6);
+  text-decoration: none;
+  letter-spacing: -0.01em;
+}
+
+.link-card,
+.link-card:visited,
+.link-card:hover,
+.link-card:focus,
+.link-card:active {
+  text-decoration: none;
+  color: inherit;
+}

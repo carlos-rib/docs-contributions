@@ -1,0 +1,109 @@
+name: Contribution PR Checks
+
+on:
+  pull_request:
+    types: [opened, synchronize, reopened, ready_for_review]
+
+permissions:
+  contents: read
+  pull-requests: read
+
+jobs:
+  external-change-scope:
+    name: External PR File Scope
+    runs-on: ubuntu-latest
+    steps:
+      - name: Validate files changed in external PRs
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const pr = context.payload.pull_request;
+            if (!pr) {
+              core.setFailed('This workflow only supports pull_request events.');
+              return;
+            }
+
+            const isExternalPR = pr.head.repo.fork;
+            if (!isExternalPR) {
+              core.info('Internal PR detected; skipping docs/contributions scope restriction.');
+              return;
+            }
+
+            const files = await github.paginate(github.rest.pulls.listFiles, {
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              pull_number: pr.number,
+              per_page: 100,
+            });
+
+            const disallowed = files
+              .map((file) => file.filename)
+              .filter((filename) => !filename.startsWith('docs/contributions/'));
+
+            if (disallowed.length > 0) {
+              core.setFailed([
+                'External pull requests may only modify files under docs/contributions/**.',
+                '',
+                'Disallowed changes:',
+                ...disallowed.map((file) => `- ${file}`),
+              ].join('\n'));
+              return;
+            }
+
+            const kebabCasePattern = /^[a-z0-9]+(?:-[a-z0-9]+)*$/;
+            const invalidKebabCasePaths = [];
+
+            for (const file of files) {
+              const filename = file.filename;
+              if (!filename.startsWith('docs/contributions/')) {
+                continue;
+              }
+
+              const relativePath = filename.replace(/^docs\/contributions\//, '');
+              if (!relativePath) {
+                continue;
+              }
+
+              const segments = relativePath.split('/').filter(Boolean);
+              const allValid = segments.every((segment) => {
+                const dotIndex = segment.lastIndexOf('.');
+                const name = dotIndex > 0 ? segment.slice(0, dotIndex) : segment;
+                return kebabCasePattern.test(name);
+              });
+
+              if (!allValid) {
+                invalidKebabCasePaths.push(filename);
+              }
+            }
+
+            if (invalidKebabCasePaths.length > 0) {
+              core.setFailed([
+                'File and folder names under docs/contributions/** must use kebab-case.',
+                '',
+                'Invalid paths:',
+                ...invalidKebabCasePaths.map((file) => `- ${file}`),
+              ].join('\n'));
+              return;
+            }
+
+            core.info('External PR changes are limited to docs/contributions/**.');
+
+  build-docusaurus:
+    name: Build Docusaurus Site
+    runs-on: ubuntu-latest
+    needs: external-change-scope
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build site
+        run: npm run build

@@ -1,0 +1,59 @@
+.btn-gradient {
+  display: inline-flex;
+  position: relative;
+  overflow: hidden;
+  align-items: center;
+  justify-content: center;
+  white-space: nowrap;
+
+  height: 2.25rem;
+  width: 100%;
+  padding: 0.5rem 1rem;
+  border-radius: 0.375rem;
+  border: 0.5px solid rgba(142, 208, 252, 0.4);
+  box-shadow: 0 1px 2px 0 rgba(9, 28, 42, 0.2);
+
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  font-weight: 500;
+  color: #c7eeff;
+
+  cursor: default;
+  outline: 1px solid transparent;
+
+  background-image: linear-gradient(to right, #0c7ebc 0%, #024d75 100%);
+
+  transition: all 150ms ease-in-out;
+}
+
+.btn-gradient:hover {
+  background-image: linear-gradient(to right, #0881c2 0%, #0580c3 100%);
+  border-color: #64a0c8;
+  text-decoration: none;
+  color: #ffffff;
+}
+
+.btn-gradient:focus-visible {
+  outline: 1px solid #0088cc;
+  outline-offset: 1.5px;
+}
+
+.btn-gradient:active {
+  transform: scale(0.98);
+}
+
+.btn-gradient[disabled]:active,
+.btn-gradient[aria-disabled='true']:active {
+  transform: none;
+}
+.btn-gradient[disabled],
+.btn-gradient[aria-disabled='true'] {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+@media (min-width: 768px) {
+  .btn-gradient {
+    width: 10.25rem;
+  }
+}

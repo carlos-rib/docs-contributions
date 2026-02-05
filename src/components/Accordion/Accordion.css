@@ -1,0 +1,116 @@
+.accordionItem {
+  border-bottom: 0.5px solid #2e2e2e;
+  margin: 0;
+  padding: 0.5rem;
+  padding-bottom: 0.5rem;
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.accordionItem:last-child {
+  border-bottom: 0;
+}
+
+.accordionTriggerHeader {
+  width: 100%;
+  margin-bottom: 8px;
+}
+
+.accordionTrigger {
+  display: flex;
+  flex: 1 1 0%;
+  align-items: flex-start;
+  justify-content: space-between;
+  width: 100%;
+  margin: 0;
+
+  padding-top: 0.5rem;
+
+  text-align: left;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  font-weight: 500;
+  background-color: transparent;
+  border: none;
+
+  transition: all 0.15s ease-in-out;
+  outline: none;
+}
+
+.accordionTrigger:hover {
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.accordionTrigger:focus-visible {
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.5);
+}
+
+.accordionTrigger:disabled {
+  pointer-events: none;
+  opacity: 0.5;
+}
+
+.accordionTrigger[data-state='open'] > svg {
+  transform: rotate(180deg);
+}
+
+.chevronDownIcon {
+  color: #f3f1f1;
+
+  pointer-events: none;
+
+  width: 1rem;
+  height: 1rem;
+
+  flex-shrink: 0;
+
+  transform: translateY(0.125rem);
+
+  transition: transform 200ms ease-in-out;
+}
+
+.accordionContent {
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  margin-top: 15px;
+  padding-left: 5px;
+
+  overflow: hidden;
+}
+
+.accordionContent[data-state='open'] {
+  animation: accordion-down 200ms ease-out;
+}
+
+.accordionContent[data-state='closed'] {
+  animation: accordion-up 200ms ease-out;
+}
+
+@keyframes accordion-down {
+  from {
+    height: 0;
+    opacity: 0;
+  }
+  to {
+    height: var(--radix-accordion-content-height);
+    opacity: 1;
+  }
+}
+
+@keyframes accordion-up {
+  from {
+    height: var(--radix-accordion-content-height);
+    opacity: 1;
+  }
+  to {
+    height: 0;
+    opacity: 0;
+  }
+}
+
+.accordionContentChildren {
+  padding-top: 0;
+  padding-bottom: 8px;
+}
